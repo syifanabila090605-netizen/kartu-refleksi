@@ -7,33 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    min-height: 100vh;
-    background: #faf8f5;
-    font-family: 'Nunito', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px 16px 48px;
-    background-image:
-      radial-gradient(circle at 10% 15%, rgba(255,210,180,0.2) 0%, transparent 45%),
-      radial-gradient(circle at 90% 80%, rgba(180,210,255,0.2) 0%, transparent 45%),
-      radial-gradient(circle at 50% 50%, rgba(255,240,180,0.1) 0%, transparent 60%);
-  }
-
+  body { min-height: 100vh; background: #faf8f5; font-family: 'Nunito', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 32px 16px 48px; background-image: radial-gradient(circle at 10% 15%, rgba(255,210,180,0.2) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(180,210,255,0.2) 0%, transparent 45%); }
   .page-header { text-align: center; margin-bottom: 36px; }
   .page-title { font-family: 'Caveat', cursive; font-size: 2.8rem; font-weight: 700; color: #3d3535; line-height: 1; }
   .page-sub { font-size: 0.92rem; color: #9a8f8f; margin-top: 6px; letter-spacing: 0.04em; font-weight: 600; }
   .progress-bar-wrap { width: 240px; height: 7px; background: #ede8e3; border-radius: 99px; margin: 14px auto 0; overflow: hidden; }
   .progress-bar-fill { height: 100%; border-radius: 99px; transition: width 0.4s ease, background 0.4s ease; }
   .progress-label { font-size: 0.82rem; color: #b5a9a9; text-align: center; margin-top: 6px; font-weight: 700; }
-
   .theme-green { --c-border: #a8d5b5; --c-shadow: #7ec49a; --c-badge: #5db880; --c-tag-bg: #fff3cc; --c-tag-txt: #7a6000; --c-hint: #a8d5b5; --c-q: #1a3d2b; --c-back-a: #c8ead4; --c-back-b: #a8d5b5; --c-back-border: #7ec49a; --c-back-shadow: #5db880; --c-back-label: #1a3d2b; --c-back-dashed: #7ec49a; --c-back-text: #1a3d2b; --c-back-placeholder: #a8d5b5; --c-back-tip: #2d6a4f; --c-btn-flip: #5db880; --c-btn-flip-sh: #3a8f5c; }
   .theme-yellow { --c-border: #f5d97a; --c-shadow: #e8c044; --c-badge: #e8c044; --c-tag-bg: #fde8e8; --c-tag-txt: #8b3333; --c-hint: #f5d97a; --c-q: #3d2e00; --c-back-a: #fef3c0; --c-back-b: #f5d97a; --c-back-border: #e8c044; --c-back-shadow: #c9a500; --c-back-label: #3d2e00; --c-back-dashed: #e8c044; --c-back-text: #3d2e00; --c-back-placeholder: #f5d97a; --c-back-tip: #7a6000; --c-btn-flip: #e8c044; --c-btn-flip-sh: #b8920a; }
   .theme-blue { --c-border: #a0c4e8; --c-shadow: #6aaad8; --c-badge: #5a9fd4; --c-tag-bg: #fde8ff; --c-tag-txt: #6b0080; --c-hint: #a0c4e8; --c-q: #0d2b45; --c-back-a: #cce4f8; --c-back-b: #a0c4e8; --c-back-border: #6aaad8; --c-back-shadow: #4a8fc2; --c-back-label: #0d2b45; --c-back-dashed: #6aaad8; --c-back-text: #0d2b45; --c-back-placeholder: #a0c4e8; --c-back-tip: #1a5070; --c-btn-flip: #5a9fd4; --c-btn-flip-sh: #2e6fa8; }
   .theme-red { --c-border: #f5a8a8; --c-shadow: #e87070; --c-badge: #e87070; --c-tag-bg: #e8f5e8; --c-tag-txt: #1a5c1a; --c-hint: #f5a8a8; --c-q: #450d0d; --c-back-a: #fce0e0; --c-back-b: #f5a8a8; --c-back-border: #e87070; --c-back-shadow: #c84040; --c-back-label: #450d0d; --c-back-dashed: #e87070; --c-back-text: #450d0d; --c-back-placeholder: #f5a8a8; --c-back-tip: #7a2020; --c-btn-flip: #e87070; --c-btn-flip-sh: #b83030; }
-
+  .name-section { background: #fff; border: 3px solid #e8d5f5; border-radius: 20px; padding: 20px 24px; margin-bottom: 24px; width: min(420px, 92vw); box-shadow: 4px 4px 0 #e8d5f5; }
+  .name-label { font-size: 0.8rem; font-weight: 800; color: #9a8f8f; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .name-input { width: 100%; border: 2px solid #e8d5f5; border-radius: 12px; padding: 10px 14px; font-family: 'Caveat', cursive; font-size: 1.2rem; color: #3d3535; outline: none; background: #faf8ff; }
+  .name-input:focus { border-color: #c8a8f0; }
   .scene { perspective: 1200px; width: min(420px, 92vw); height: 300px; margin: 0 auto 28px; cursor: pointer; }
   .card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); border-radius: 24px; }
   .card.flipped { transform: rotateY(180deg); }
@@ -41,7 +29,7 @@
   .card-front { background: #fff; border: 3px solid var(--c-border); box-shadow: 0 2px 0 0 var(--c-border), 0 5px 0 0 var(--c-shadow), 0 10px 28px rgba(0,0,0,0.07), 5px 5px 0 0 var(--c-border); }
   .card-number-badge { position: absolute; top: 14px; left: 18px; background: var(--c-badge); color: #fff; font-family: 'Caveat', cursive; font-size: 1.05rem; font-weight: 700; padding: 2px 11px; border-radius: 99px; }
   .card-tag { position: absolute; top: 14px; right: 18px; background: var(--c-tag-bg); color: var(--c-tag-txt); font-size: 0.7rem; font-weight: 800; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .card-emoji { font-size: 2.5rem; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+  .card-emoji { font-size: 2.5rem; margin-bottom: 12px; }
   .card-question { font-family: 'Caveat', cursive; font-size: 1.55rem; font-weight: 700; color: var(--c-q); text-align: center; line-height: 1.35; }
   .tap-hint { position: absolute; bottom: 14px; font-size: 0.7rem; color: var(--c-hint); font-weight: 700; letter-spacing: 0.05em; }
   .card-back { background: linear-gradient(145deg, var(--c-back-a), var(--c-back-b)); border: 3px solid var(--c-back-border); box-shadow: 0 8px 28px rgba(0,0,0,0.08), 5px 5px 0 0 var(--c-back-shadow); transform: rotateY(180deg); flex-direction: column; gap: 10px; }
@@ -49,15 +37,18 @@
   .answer-area { width: 100%; background: rgba(255,255,255,0.6); border: 2px dashed var(--c-back-dashed); border-radius: 14px; min-height: 110px; padding: 12px 14px; font-family: 'Caveat', cursive; font-size: 1.2rem; color: var(--c-back-text); resize: none; outline: none; line-height: 1.5; flex: 1; }
   .answer-area::placeholder { color: var(--c-back-placeholder); }
   .back-tip { font-size: 0.7rem; color: var(--c-back-tip); opacity: 0.6; font-weight: 700; text-align: center; }
-
   .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
   .btn { border: none; outline: none; cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 800; border-radius: 14px; transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
   .btn:active { transform: scale(0.95); }
   .btn-nav { background: #fff; color: #4a4040; border: 2.5px solid #e5dede; padding: 11px 18px; font-size: 0.9rem; box-shadow: 0 3px 0 #e5dede; }
-  .btn-nav:hover { background: #f8f4f4; }
   .btn-nav:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
   .btn-flip { background: var(--c-btn-flip); color: #fff; padding: 12px 24px; font-size: 0.95rem; box-shadow: 0 4px 0 var(--c-btn-flip-sh); }
-
+  .btn-submit { background: linear-gradient(135deg, #a855f7, #6366f1); color: #fff; padding: 14px 32px; font-size: 1rem; border-radius: 16px; border: none; cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 800; box-shadow: 0 4px 0 #7c3aed; width: min(420px, 92vw); margin-bottom: 24px; transition: all 0.15s; }
+  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status-msg { font-size: 0.9rem; font-weight: 800; text-align: center; padding: 12px 20px; border-radius: 14px; margin-bottom: 20px; width: min(420px, 92vw); display: none; }
+  .status-success { background: #e8f5ee; color: #2d6a4f; border: 2px solid #a8d5b5; display: block; }
+  .status-error { background: #ffe8e8; color: #8b2020; border: 2px solid #f5a8a8; display: block; }
+  .status-loading { background: #f0f0ff; color: #4040a0; border: 2px solid #c0c0ff; display: block; }
   .grid-title { font-family: 'Caveat', cursive; font-size: 1.4rem; font-weight: 700; color: #3d3535; text-align: center; margin-bottom: 14px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 9px; width: min(520px, 92vw); max-height: 270px; overflow-y: auto; padding: 4px; }
   .thumb { background: #fff; border: 2px solid #ede8e3; border-radius: 14px; padding: 10px 8px; cursor: pointer; transition: all 0.18s; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -67,30 +58,26 @@
   .thumb.active.tr { border-color: #e87070; background: #fff5f5; box-shadow: 0 0 0 3px rgba(232,112,112,0.18); }
   .thumb.done { border-color: #e8c044; }
   .thumb-emoji { font-size: 1.25rem; }
-  .thumb-num { font-size: 0.63rem; font-weight: 800; color: #b5a9a9; letter-spacing: 0.03em; }
+  .thumb-num { font-size: 0.63rem; font-weight: 800; color: #b5a9a9; }
   .thumb-check { font-size: 0.72rem; color: #e8c044; font-weight: 800; }
-
   .deco { position: fixed; pointer-events: none; opacity: 0.06; font-size: 5rem; user-select: none; }
   .deco-1 { top: 4%; left: 2%; transform: rotate(-18deg); }
   .deco-2 { bottom: 8%; right: 2%; transform: rotate(12deg); }
-  .deco-3 { top: 42%; left: 0.5%; font-size: 3rem; transform: rotate(25deg); }
 </style>
 </head>
 <body>
-
 <div class="deco deco-1">🌸</div>
 <div class="deco deco-2">⭐</div>
-<div class="deco deco-3">🍀</div>
-
 <div class="page-header">
   <div class="page-title">Kartu Refleksi ✨</div>
   <div class="page-sub">20 pertanyaan untuk mengenal dirimu lebih baik</div>
-  <div class="progress-bar-wrap">
-    <div class="progress-bar-fill" id="progressFill" style="width:5%"></div>
-  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:5%"></div></div>
   <div class="progress-label" id="progressLabel">1 / 20</div>
 </div>
-
+<div class="name-section">
+  <div class="name-label">👤 Nama kamu</div>
+  <input class="name-input" id="namaInput" type="text" placeholder="Tulis namamu di sini...">
+</div>
 <div class="scene" id="scene" onclick="flipCard()">
   <div class="card theme-green" id="card">
     <div class="card-face card-front">
@@ -107,17 +94,17 @@
     </div>
   </div>
 </div>
-
 <div class="controls">
   <button class="btn btn-nav" id="btnPrev" onclick="navigate(-1)" disabled>← Prev</button>
   <button class="btn btn-flip" id="btnFlip" onclick="flipCard()">🔄 Balik Kartu</button>
   <button class="btn btn-nav" id="btnNext" onclick="navigate(1)">Next →</button>
 </div>
-
+<div class="status-msg" id="statusMsg"></div>
+<button class="btn-submit" id="btnSubmit" onclick="submitAnswers()">💾 Kirim Semua Jawaban</button>
 <div class="grid-title">Semua Kartu 🗂️</div>
 <div class="grid" id="thumbGrid"></div>
-
 <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIrQtokHss78qO2jUvGL4UiBU8wU4EvKeiDGWrrPu-Q5qW4bekGw9VU5Rj1kPSMY0OYQ/exec";
 const cards = [
   { q: "Sebutkan 3 kelebihan yang kamu miliki.", e: "🌟", t: "green" },
   { q: "Tuliskan satu keberhasilan yang paling kamu banggakan.", e: "🏆", t: "yellow" },
@@ -140,13 +127,10 @@ const cards = [
   { q: "Sebutkan tiga hal baik yang ada dalam dirimu hari ini.", e: "🍀", t: "green" },
   { q: "Setelah bermain game ini, hal apa yang kamu pelajari tentang dirimu sendiri?", e: "🪞", t: "green" },
 ];
-
 const themeMap = { green: 'theme-green', yellow: 'theme-yellow', blue: 'theme-blue', red: 'theme-red' };
 const progressColors = { green: 'linear-gradient(90deg,#5db880,#a8d5b5)', yellow: 'linear-gradient(90deg,#e8c044,#f5d97a)', blue: 'linear-gradient(90deg,#5a9fd4,#a0c4e8)', red: 'linear-gradient(90deg,#e87070,#f5a8a8)' };
 const thumbClass = { green: 'tg', yellow: 'ty', blue: 'tb', red: 'tr' };
-
 let current = 0, flipped = false, answers = Array(20).fill("");
-
 const cardEl = document.getElementById('card');
 const cardNum = document.getElementById('cardNum');
 const cardEmoji = document.getElementById('cardEmoji');
@@ -156,60 +140,58 @@ const btnPrev = document.getElementById('btnPrev');
 const btnNext = document.getElementById('btnNext');
 const progressFill = document.getElementById('progressFill');
 const progressLabel = document.getElementById('progressLabel');
-
-function flipCard() {
-  flipped = !flipped;
-  cardEl.classList.toggle('flipped', flipped);
-  if (flipped) setTimeout(() => answerArea.focus(), 300);
-}
-
+const statusMsg = document.getElementById('statusMsg');
+const btnSubmit = document.getElementById('btnSubmit');
+function flipCard() { flipped = !flipped; cardEl.classList.toggle('flipped', flipped); if (flipped) setTimeout(() => answerArea.focus(), 300); }
 function saveAnswer() { answers[current] = answerArea.value; }
-
 function loadCard(idx) {
-  saveAnswer();
-  current = idx;
-  flipped = false;
-  cardEl.classList.remove('flipped');
+  saveAnswer(); current = idx; flipped = false; cardEl.classList.remove('flipped');
   const c = cards[idx];
   cardEl.className = 'card ' + themeMap[c.t];
   cardNum.textContent = String(idx + 1).padStart(2, '0');
-  cardEmoji.textContent = c.e;
-  cardQuestion.textContent = c.q;
-  answerArea.value = answers[idx];
-  btnPrev.disabled = idx === 0;
-  btnNext.disabled = idx === cards.length - 1;
+  cardEmoji.textContent = c.e; cardQuestion.textContent = c.q; answerArea.value = answers[idx];
+  btnPrev.disabled = idx === 0; btnNext.disabled = idx === cards.length - 1;
   progressFill.style.width = ((idx + 1) / cards.length * 100) + '%';
   progressFill.style.background = progressColors[c.t];
   progressLabel.textContent = `${idx + 1} / ${cards.length}`;
   renderGrid();
 }
-
-function navigate(dir) {
-  const next = current + dir;
-  if (next >= 0 && next < cards.length) loadCard(next);
-}
-
+function navigate(dir) { const next = current + dir; if (next >= 0 && next < cards.length) loadCard(next); }
 function renderGrid() {
-  const grid = document.getElementById('thumbGrid');
-  grid.innerHTML = '';
+  const grid = document.getElementById('thumbGrid'); grid.innerHTML = '';
   cards.forEach((c, i) => {
     const div = document.createElement('div');
     div.className = 'thumb' + (i === current ? ' active ' + thumbClass[c.t] : '') + (answers[i] ? ' done' : '');
     div.innerHTML = `<span class="thumb-emoji">${c.e}</span><span class="thumb-num">Kartu ${String(i+1).padStart(2,'0')}</span>${answers[i] ? '<span class="thumb-check">✔</span>' : ''}`;
-    div.onclick = () => loadCard(i);
-    grid.appendChild(div);
+    div.onclick = () => loadCard(i); grid.appendChild(div);
   });
 }
-
+async function submitAnswers() {
+  saveAnswer();
+  const nama = document.getElementById('namaInput').value || 'Anonim';
+  const data = { nama };
+  answers.forEach((a, i) => { data['kartu' + (i + 1)] = a; });
+  statusMsg.className = 'status-msg status-loading';
+  statusMsg.textContent = '⏳ Mengirim jawaban...';
+  btnSubmit.disabled = true;
+  try {
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    statusMsg.className = 'status-msg status-success';
+    statusMsg.textContent = '✅ Jawaban berhasil dikirim ke Google Sheets!';
+  } catch(err) {
+    statusMsg.className = 'status-msg status-error';
+    statusMsg.textContent = '❌ Gagal mengirim. Coba lagi ya!';
+  }
+  btnSubmit.disabled = false;
+}
 answerArea.addEventListener('input', () => { answers[current] = answerArea.value; });
 document.addEventListener('keydown', e => {
-  if (e.target === answerArea) return;
+  if (e.target === answerArea || e.target === document.getElementById('namaInput')) return;
   if (e.key === 'ArrowRight') navigate(1);
   if (e.key === 'ArrowLeft') navigate(-1);
   if (e.key === ' ') { e.preventDefault(); flipCard(); }
 });
-
 loadCard(0);
 </script>
 </body>
-  </html>
+</html>
